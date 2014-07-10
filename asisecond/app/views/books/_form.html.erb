@@ -1,0 +1,30 @@
+<%= simple_form_for(@book) do |f| %>
+  <%= f.error_notification %>
+  <div class="control-group string optional">
+    <div class="controls">
+    <% if @book.cover? %>
+      <%= image_tag @book.cover_url(:thumb) %>
+    <% end %>
+    </div>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :cover, label: "Upload local file", as: :file %>
+    <%= f.hidden_field :cover_cache %>
+    <%= f.input :remote_cover_url, label: "or input URL" %>
+    <% unless @book.new_record? %>
+      <%= f.input :remove_cover, label: "remove cover", as: :boolean %>
+    <% end %>
+  </div>
+  <div class="form-inputs">
+    <%= f.input :author %>
+    <%= f.input :title %>
+    <%= f.input :isbn %>
+    <%= f.input :price %>
+  </div>
+  <br />
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <a href='/books/<%= @book.id %>' class="btn btn-primary" role="button">Show &raquo;</a>
+    <a href='/books' class="btn btn-primary" role="button">Back &raquo;</a>
+  </div>
+<% end %>

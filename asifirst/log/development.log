@@ -1,0 +1,1137 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:07:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.3ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (30.6ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+Completed 200 OK in 5099ms (Views: 5064.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:07:43 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.4ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gists/1" for 127.0.0.1 at 2014-03-02 14:07:47 +0100
+Processing by GistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGist Load (0.4ms)[0m  SELECT "gists".* FROM "gists" WHERE "gists"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered gists/show.html.erb within layouts/application (204.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 222ms (Views: 218.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gists" for 127.0.0.1 at 2014-03-02 14:07:49 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gists/new" for 127.0.0.1 at 2014-03-02 14:07:51 +0100
+Processing by GistsController#new as HTML
+ERROR: compiling _app_views_gists__form_html_erb__3132967887071969330_69885900394620 RAISED /home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ':', expecting ')'
+...append=( f.text_area :snippet :cols => "30", :rows => "10" )...
+...                               ^
+/home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ',', expecting ')'
+...xt_area :snippet :cols => "30", :rows => "10" );@output_buff...
+...                               ^
+Function body:           def _app_views_gists__form_html_erb__3132967887071969330_69885900394620(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "gists/_form";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@gist) do |f| @output_buffer.safe_append='
+';   if @gist.errors.any? 
+@output_buffer.safe_append='    <div id="error_explanation">
+      <h2>';@output_buffer.append=( pluralize(@gist.errors.count, "error") );@output_buffer.safe_append=' prohibited this gist from being saved:</h2>
+
+      <ul>
+';       @gist.errors.full_messages.each do |msg| 
+@output_buffer.safe_append='        <li>';@output_buffer.append=( msg );@output_buffer.safe_append='</li>
+';       end 
+@output_buffer.safe_append='      </ul>
+    </div>
+';   end 
+@output_buffer.safe_append='
+  <div class="field">
+    ';@output_buffer.append=( f.label :snippet );@output_buffer.safe_append='<br>
+    ';@output_buffer.append=( f.text_area :snippet :cols => "30", :rows => "10" );@output_buffer.safe_append='
+  </div>
+  <div class="field">
+    ';@output_buffer.append=( f.label :lang );@output_buffer.safe_append='<br>
+    ';@output_buffer.append=( f.text_field :lang );@output_buffer.safe_append='
+  </div>
+  <div class="field">
+    ';@output_buffer.append=( f.label :description );@output_buffer.safe_append='<br>
+    ';@output_buffer.append=( f.text_field :description );@output_buffer.safe_append='
+  </div>
+  <div class="actions">
+    ';@output_buffer.append=( f.submit );@output_buffer.safe_append='
+  </div>
+'; end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:299:in `module_eval'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:299:in `compile'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:248:in `block in compile!'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:236:in `synchronize'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:236:in `compile!'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:142:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:161:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:141:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/partial_renderer.rb:278:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/renderer.rb:47:in `render_partial'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/helpers/rendering_helper.rb:27:in `render'
+/home/henio/git/asifirst/app/views/gists/new.html.erb:3:in `_app_views_gists_new_html_erb___2311921365285235612_69885900411680'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:143:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:161:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:141:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:17:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/renderer.rb:42:in `render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/renderer.rb:23:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:127:in `_render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:97:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/base.rb:189:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:413:in `_run__2812327477942845394__process_action__callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/base.rb:136:in `process'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:44:in `process'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal.rb:195:in `dispatch'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal.rb:231:in `block in action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:80:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:48:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/journey/router.rb:71:in `block in call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/journey/router.rb:59:in `each'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/journey/router.rb:59:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:680:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/flash.rb:241:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/query_cache.rb:36:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/migration.rb:369:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:373:in `_run__3904544078788823267__call__callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/rack/logger.rb:38:in `call_app'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/rack/logger.rb:20:in `block in call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/tagged_logging.rb:25:in `tagged'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/tagged_logging.rb:67:in `tagged'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/rack/logger.rb:20:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/quiet_assets-1.0.2/lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/static.rb:64:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/engine.rb:511:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/application.rb:97:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered gists/_form.html.erb (42.4ms)
+  Rendered gists/new.html.erb within layouts/application (44.5ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (/home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ':', expecting ')'
+...append=( f.text_area :snippet :cols => "30", :rows => "10" )...
+...                               ^
+/home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ',', expecting ')'
+...xt_area :snippet :cols => "30", :rows => "10" );@output_buff...
+...                               ^):
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :snippet %><br>
+    16:     <%= f.text_area :snippet :cols => "30", :rows => "10" %>
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :lang %><br>
+  app/views/gists/new.html.erb:3:in `_app_views_gists_new_html_erb___2311921365285235612_69885900411680'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.0ms)
+
+
+Started GET "/gists/new" for 127.0.0.1 at 2014-03-02 14:07:51 +0100
+Processing by GistsController#new as HTML
+ERROR: compiling _app_views_gists__form_html_erb__3132967887071969330_24988900 RAISED /home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ':', expecting ')'
+...append=( f.text_area :snippet :cols => "30", :rows => "10" )...
+...                               ^
+/home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ',', expecting ')'
+...xt_area :snippet :cols => "30", :rows => "10" );@output_buff...
+...                               ^
+Function body:           def _app_views_gists__form_html_erb__3132967887071969330_24988900(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "gists/_form";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@gist) do |f| @output_buffer.safe_append='
+';   if @gist.errors.any? 
+@output_buffer.safe_append='    <div id="error_explanation">
+      <h2>';@output_buffer.append=( pluralize(@gist.errors.count, "error") );@output_buffer.safe_append=' prohibited this gist from being saved:</h2>
+
+      <ul>
+';       @gist.errors.full_messages.each do |msg| 
+@output_buffer.safe_append='        <li>';@output_buffer.append=( msg );@output_buffer.safe_append='</li>
+';       end 
+@output_buffer.safe_append='      </ul>
+    </div>
+';   end 
+@output_buffer.safe_append='
+  <div class="field">
+    ';@output_buffer.append=( f.label :snippet );@output_buffer.safe_append='<br>
+    ';@output_buffer.append=( f.text_area :snippet :cols => "30", :rows => "10" );@output_buffer.safe_append='
+  </div>
+  <div class="field">
+    ';@output_buffer.append=( f.label :lang );@output_buffer.safe_append='<br>
+    ';@output_buffer.append=( f.text_field :lang );@output_buffer.safe_append='
+  </div>
+  <div class="field">
+    ';@output_buffer.append=( f.label :description );@output_buffer.safe_append='<br>
+    ';@output_buffer.append=( f.text_field :description );@output_buffer.safe_append='
+  </div>
+  <div class="actions">
+    ';@output_buffer.append=( f.submit );@output_buffer.safe_append='
+  </div>
+'; end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:299:in `module_eval'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:299:in `compile'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:248:in `block in compile!'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:236:in `synchronize'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:236:in `compile!'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:142:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:161:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:141:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/partial_renderer.rb:278:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/renderer.rb:47:in `render_partial'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/helpers/rendering_helper.rb:27:in `render'
+/home/henio/git/asifirst/app/views/gists/new.html.erb:3:in `_app_views_gists_new_html_erb___2311921365285235612_25031880'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:143:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:161:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/template.rb:141:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:49:in `block (2 levels) in render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:48:in `block in render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:56:in `render_with_layout'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/template_renderer.rb:17:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/renderer.rb:42:in `render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_view/renderer/renderer.rb:23:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:127:in `_render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:97:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/base.rb:189:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:413:in `_run__2812327477942845394__process_action__callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/notifications.rb:159:in `instrument'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/base.rb:136:in `process'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/abstract_controller/rendering.rb:44:in `process'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal.rb:195:in `dispatch'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_controller/metal.rb:231:in `block in action'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:80:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:48:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/journey/router.rb:71:in `block in call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/journey/router.rb:59:in `each'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/journey/router.rb:59:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/routing/route_set.rb:680:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/flash.rb:241:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/query_cache.rb:36:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activerecord-4.0.3/lib/active_record/migration.rb:369:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:373:in `_run__3904544078788823267__call__callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/rack/logger.rb:38:in `call_app'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/rack/logger.rb:20:in `block in call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/tagged_logging.rb:25:in `tagged'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/tagged_logging.rb:67:in `tagged'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/rack/logger.rb:20:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/quiet_assets-1.0.2/lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/activesupport-4.0.3/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/static.rb:64:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/engine.rb:511:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/railties-4.0.3/lib/rails/application.rb:97:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+/home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+/home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered gists/_form.html.erb (2.7ms)
+  Rendered gists/new.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (/home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ':', expecting ')'
+...append=( f.text_area :snippet :cols => "30", :rows => "10" )...
+...                               ^
+/home/henio/git/asifirst/app/views/gists/_form.html.erb:16: syntax error, unexpected ',', expecting ')'
+...xt_area :snippet :cols => "30", :rows => "10" );@output_buff...
+...                               ^):
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :snippet %><br>
+    16:     <%= f.text_area :snippet :cols => "30", :rows => "10" %>
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :lang %><br>
+  app/views/gists/new.html.erb:3:in `_app_views_gists_new_html_erb___2311921365285235612_25031880'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.8ms)
+
+
+Started GET "/gists/new" for 127.0.0.1 at 2014-03-02 14:08:06 +0100
+Processing by GistsController#new as HTML
+  Rendered gists/_form.html.erb (129.9ms)
+  Rendered gists/new.html.erb within layouts/application (131.9ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 143ms (Views: 142.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gists/new" for 127.0.0.1 at 2014-03-02 14:08:07 +0100
+Processing by GistsController#new as HTML
+  Rendered gists/_form.html.erb (3.3ms)
+  Rendered gists/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:09:21 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.3ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:09:26 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.2ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:09:26 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.2ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:09:27 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:11:33 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.6ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 381ms (Views: 375.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:11:33 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:11:34 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.3ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:11:35 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:11:36 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.3ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (115.8ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:11:58 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.9ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:11:59 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.2ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (27.7ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:11:59 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (23.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:12:00 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (24.8ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:12:00 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (23.7ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:12:07 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/about/index" for 127.0.0.1 at 2014-03-02 14:12:21 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about/about/index"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (28.5ms)
+
+
+Started GET "/about/about/index" for 127.0.0.1 at 2014-03-02 14:12:21 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about/about/index"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (22.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:12:26 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.4ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:12:26 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.4ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:12:27 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (34.1ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2014-03-02 14:12:27 +0100
+
+ActionController::RoutingError (No route matches [GET] "/about"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/henio/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/henio/.rvm/gems/ruby-2.1.1@mygist/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:12:38 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.5ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:12:39 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:13:33 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:13:34 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:13:35 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:13:37 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.6ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:13:37 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.5ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:13:38 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:06 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 324ms (Views: 322.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:08 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:08 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:08 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:14 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:26 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:26 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:52 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:53 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:53 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:53 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:54 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:54 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:54 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:54 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:55 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:55 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:14:55 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.6ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:14:56 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.4ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:14:57 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:58 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:14:58 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:14:59 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:14:59 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.3ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:15:00 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.2ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:15:00 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for 127.0.0.1 at 2014-03-02 14:15:00 +0100
+Processing by ContactController#index as HTML
+  Rendered contact/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about/index" for 127.0.0.1 at 2014-03-02 14:15:01 +0100
+Processing by AboutController#index as HTML
+  Rendered about/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:15:01 +0100
+Processing by GistsController#index as HTML
+  [1m[35mGist Load (0.3ms)[0m  SELECT "gists".* FROM "gists"
+  Rendered gists/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-02 14:15:51 +0100
+Processing by GistsController#index as HTML
+  [1m[36mGist Load (0.3ms)[0m  [1mSELECT "gists".* FROM "gists"[0m
+  Rendered gists/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.3ms)

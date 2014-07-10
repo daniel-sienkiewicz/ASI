@@ -1,0 +1,18 @@
+<h1>Crop Cover</h1>
+<%= image_tag @book.cover_url, id: "jcrop_target" %>
+
+<%= simple_form_for @book, url: update_crop_book_path(@book),
+      html: { id: "coords" } do |f| %>
+<% %w[x y w h].each do |attr| %>
+  <%= f.input "crop_#{attr}" %>
+<% end %>
+<br/>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>
+<br/>
+<a href='/books/<%= @book.id %>'><button type="button" class="btn btn-primary">Show &raquo;</button></a> 
+<a href='/books' class="btn btn-primary" role="button">Back &raquo;</a>
+<br/>
+<%= javascript_include_tag 'crop' %>

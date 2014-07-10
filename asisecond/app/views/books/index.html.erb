@@ -1,0 +1,4 @@
+<div class="books">
+    <%= render :partial => 'shared/books', :locals => { :books => @books } %>
+</div>
+<%= link_to 'Load More Books', books_path(:page => @books.next_page), :class => 'load-more-books', :remote => true if @books.next_page %>

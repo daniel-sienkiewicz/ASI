@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyBooks</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <%= render "layouts/navbar" %>
+<div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <%= yield %>
+      </div>
+
+      <div class="well">
+        <a href"mailto: d.sienkiewicz@interia.eu">Henio</a> © <a href="https://github.com/henio180"><img src="http://project-midas.com/daniel_things/github.png" alt="GitHub" width="8%" align="right"></a>
+      </div>
+    </div> <!-- /container -->
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+$('.books').append('#{escape_javascript(render partial: "shared/books", :locals => { :books => @books })}');
+$('a.load-more-books').attr('href', '#{books_path page: @books.next_page}');
+ 
+- unless @books.next_page
+  $('a.load-more-books').remove();

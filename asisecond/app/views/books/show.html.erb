@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="row featurette">
+  <div class="col-md-7">
+    <p class='tekst'><strong>Author:</strong><%= @book.author %></p>
+    <p class='tekst'><strong>Title:</strong><%= @book.title %></p>
+    <p class='tekst'><strong>Isbn:</strong><%= @book.isbn %></p>
+    <p class='tekst'><strong>Price:</strong><%= @book.price %></p>
+    <a href='/books/<%= @book.id %>/edit/'><button type="button" class="btn btn-primary">Edit &raquo;</button></a>
+    <a href='/books' class="btn btn-primary" role="button">Back &raquo;</a>
+  </div>
+  <br />
+  <div class="col-md-5">
+    <%= image_tag @book.cover_url, :class => 'img-responsive' if @book.cover? %><br />
+    <% if @book.cover? %>
+      <a href='<%= crop_book_path(@book) %>'><br /><button type="button" class="btn btn-xs btn-success">Edit &raquo;</button></a>
+    <% end %>
+  </div>
+</div>
